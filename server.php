@@ -1,5 +1,7 @@
 <?php
 
+namespace Server;
+
 class Server {
     const HOST = '127.0.0.1';
     const PORT = 2525;
@@ -13,6 +15,7 @@ class Server {
     
         for ($i = 0; $i < strlen($plaintext); $i++) {
             $char = $plaintext[$i];
+
             if ($char === ' ') {
                 $ciphertext .= ' ';
             } else {

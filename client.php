@@ -1,5 +1,7 @@
 <?php
 
+namespace Client;
+
 class Client {
 
     const HOST = '127.0.0.1';
@@ -17,14 +19,14 @@ class Client {
         return file_get_contents($filename);
     }
 
-    private static function connectToServer(string $host, int $port): \Socket|false
+    private static function connectToServer(): \Socket|false
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         if ($socket === false) {
             die("socket_create() failed: reason: " . socket_strerror(socket_last_error()) . "\n");
         }
     
-        $result = socket_connect($socket, $host, $port);
+        $result = socket_connect($socket, self::HOST, self::PORT);
         if ($result === false) {
             die("socket_connect() failed.\nReason: ($result) " . socket_strerror(socket_last_error($socket)) . "\n");
         }
@@ -44,7 +46,9 @@ class Client {
         return $response;
     }
 
-    public static function main($filename, $ciphertext) {
+    public static function main(string $filename, string $ciphertext): void
+    {
+        echo "hello";
         // Read the document and substitution alphabet
         $plaintext = self::readDocument($filename);
         //$substitutionAlphabet = 'zyxwvutsrqponmlkjihgfedcba';
