@@ -48,7 +48,6 @@ class Client {
 
     public static function main(string $filename, string $ciphertext): void
     {
-        echo "hello";
         // Read the document and substitution alphabet
         $plaintext = self::readDocument($filename);
         //$substitutionAlphabet = 'zyxwvutsrqponmlkjihgfedcba';
