@@ -2,8 +2,8 @@
 
 class Client {
 
-    public ?string $filename;
-    public ?string $ciphertext;
+    protected ?string $filename;
+    protected ?string $ciphertext;
 
     public function __construct(?string $filename = 'test.txt', ?string $ciphertext = '') {
         $this->filename = $filename;
@@ -44,7 +44,7 @@ class Client {
 
     public static function main($filename, $ciphertext) {
         $host = '127.0.0.1';
-        $port = 9090;
+        $port = 2525;
     
         // Read the document and substitution alphabet
         $plaintext = self::readDocument($filename);
