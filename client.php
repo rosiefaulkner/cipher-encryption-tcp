@@ -2,6 +2,8 @@
 
 class Client {
 
+    const HOST = '127.0.0.1';
+    const PORT = 2525;
     protected ?string $filename;
     protected ?string $ciphertext;
 
@@ -43,15 +45,12 @@ class Client {
     }
 
     public static function main($filename, $ciphertext) {
-        $host = '127.0.0.1';
-        $port = 2525;
-    
         // Read the document and substitution alphabet
         $plaintext = self::readDocument($filename);
         //$substitutionAlphabet = 'zyxwvutsrqponmlkjihgfedcba';
     
         // Connect to the server
-        $socket = self::connectToServer($host, $port);
+        $socket = self::connectToServer(self::HOST, self::PORT);
     
         // Send the plaintext and substitution alphabet to the server
         $data = json_encode(['plaintext' => $plaintext, 'substitution' => $ciphertext]);
