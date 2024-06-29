@@ -6,7 +6,7 @@ Client/server cypher encryption application using socket programming with TCP vi
 1. Composer 10*
 2. PHP 8.3
 
-## To run:
+## To Run
 1. Open a terminal and navigate to the root directory which contains `client.php` and `server.php`.
 2. Open a second terminal and navigate to the root directory which contains `client.php` and `server.php`.
 3. In the first terminal, run the following command to start the socket server: `php server.php`
