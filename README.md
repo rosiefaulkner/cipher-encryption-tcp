@@ -5,6 +5,7 @@ Client/server cypher encryption application using socket programming with TCP vi
 
 1. Composer 2.7.6
 2. PHP 8.3
+3. PHPUnit 10*
 
 ## To Run
 1. Open a terminal and navigate to the root directory which contains a src/ directory that contains `Client.php` and `Server.php` class files.
