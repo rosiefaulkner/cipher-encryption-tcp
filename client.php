@@ -2,14 +2,16 @@
 
 namespace Client;
 
-class Client {
+class Client
+{
 
     const HOST = '127.0.0.1';
     const PORT = 2525;
     protected ?string $filename;
     protected ?string $ciphertext;
 
-    public function __construct(?string $filename = 'test.txt', ?string $ciphertext = '') {
+    public function __construct(?string $filename = 'test.txt', ?string $ciphertext = '')
+    {
         $this->filename = $filename;
         $this->ciphertext = $ciphertext;
     }
@@ -25,20 +27,22 @@ class Client {
         if ($socket === false) {
             die("socket_create() failed: reason: " . socket_strerror(socket_last_error()) . "\n");
         }
-    
+
         $result = socket_connect($socket, self::HOST, self::PORT);
         if ($result === false) {
             die("socket_connect() failed.\nReason: ($result) " . socket_strerror(socket_last_error($socket)) . "\n");
         }
-    
+
         return $socket;
     }
 
-    private static function sendToServer($socket, $data) {
+    private static function sendToServer($socket, $data)
+    {
         socket_write($socket, $data, strlen($data));
     }
 
-    private static function receiveFromServer($socket) {
+    private static function receiveFromServer($socket)
+    {
         $response = '';
         while ($out = socket_read($socket, 2048)) {
             $response .= $out;
@@ -54,21 +58,29 @@ class Client {
         // Read the document and substitution alphabet
         $plaintext = self::readDocument($filename);
         //$substitutionAlphabet = 'zyxwvutsrqponmlkjihgfedcba';
-    
+
         // Connect to the server
         $socket = self::connectToServer(self::HOST, self::PORT);
-    
+
         // Send the plaintext and substitution alphabet to the server
         $data = json_encode(['plaintext' => $plaintext, 'substitution' => $ciphertext]);
         self::sendToServer($socket, $data);
-    
+
         // Receive the ciphertext from the server
         $encryptedText = self::receiveFromServer($socket);
         echo "Ciphertext: " . $encryptedText . "\n";
-    
+
         socket_close($socket);
     }
-
 }
 
-Client::main('test.txt', 'nmbvcxzasdfghjklpoiuytrewq');
+// Enable calling of client from command line with user selected params
+if (php_sapi_name() === 'cli') {
+    if ($argc !== 3) {
+        echo "Usage: php Client.php <filename> <ciphertext>\n";
+        exit(1);
+    }
+    Client::main($argv[1], $argv[2]);
+}
+
+// Client::main('test.txt', 'nmbvcxzasdfghjklpoiuytrewq');
