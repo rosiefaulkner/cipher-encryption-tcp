@@ -50,7 +50,14 @@ class Server {
                 continue;
             }
     
-            $input = socket_read($client, 2048);
+            $input = '';
+            while ($out = socket_read($client, 2048)) {
+                $input .= $out;
+                if (strlen($out) < 2048) {
+                    break;
+                }
+            }
+            
             $data = json_decode($input, true);
             $plaintext = $data['plaintext'];
             $substitutionAlphabet = $data['substitution'];
@@ -60,7 +67,6 @@ class Server {
             socket_write($client, $ciphertext, strlen($ciphertext));
             socket_close($client);
         } while (true);
-    
         socket_close($socket);
     }
 }

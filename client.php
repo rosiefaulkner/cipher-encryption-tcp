@@ -42,6 +42,9 @@ class Client {
         $response = '';
         while ($out = socket_read($socket, 2048)) {
             $response .= $out;
+            if (strlen($out) < 2048) {
+                break;
+            }
         }
         return $response;
     }
