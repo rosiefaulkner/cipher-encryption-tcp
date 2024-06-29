@@ -16,9 +16,12 @@ Client/server cypher encryption application using socket programming with TCP vi
 6. You may also use the other test file in the root directory: `php src/Client.php test.txt nmbvcxzasdfghjklpoiuytrewq`
 7. You will see in the command line interface that the command returns the encrypted text from within the file `us-constitution.txt` or the file `test.txt`. 
 
-### Note
+## Note
 All punctuations are replaced with spaces. Spaces are kept as spaces. Differences between uppercase and lowercase letters are ignored.
 
+## Results
+
+Encrypted input is returned in CLI:
 
 <img width="799" alt="Screenshot 2024-06-29 at 00 16 14" src="https://github.com/rosiefaulkner/cypher-encryption-tcp/assets/54520871/641cadf3-daea-4182-b9b3-f6cd27240e6b">
 
