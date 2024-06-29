@@ -12,10 +12,12 @@ class ComposerStaticInit7751177c352fc39ba0c7a47edd523379
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Server\\' => 7,
+        ),
         'R' => 
         array (
-            'Rosiefaulkner\\SocketCypher\\Server\\' => 34,
-            'Rosiefaulkner\\SocketCypher\\Client\\' => 34,
             'Rosiefaulkner\\SocketCypher\\' => 27,
         ),
         'P' => 
@@ -26,6 +28,10 @@ class ComposerStaticInit7751177c352fc39ba0c7a47edd523379
         array (
             'DeepCopy\\' => 9,
         ),
+        'C' => 
+        array (
+            'Client\\' => 7,
+        ),
         'A' => 
         array (
             'App\\Tests\\' => 10,
@@ -33,13 +39,9 @@ class ComposerStaticInit7751177c352fc39ba0c7a47edd523379
     );
 
     public static $prefixDirsPsr4 = array (
-        'Rosiefaulkner\\SocketCypher\\Server\\' => 
+        'Server\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/server.php',
-        ),
-        'Rosiefaulkner\\SocketCypher\\Client\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/client.php',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Rosiefaulkner\\SocketCypher\\' => 
         array (
@@ -52,6 +54,10 @@ class ComposerStaticInit7751177c352fc39ba0c7a47edd523379
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Client\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'App\\Tests\\' => 
         array (

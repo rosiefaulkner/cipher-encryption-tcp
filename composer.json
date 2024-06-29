@@ -4,8 +4,8 @@
     "autoload": {
         "psr-4": {
             "Rosiefaulkner\\SocketCypher\\": "src/",
-            "Rosiefaulkner\\SocketCypher\\Client\\": "src/client.php",
-            "Rosiefaulkner\\SocketCypher\\Server\\": "src/server.php"
+            "Client\\": "src/",
+            "Server\\": "src/"
         }
     },
     "autoload-dev": {

@@ -6,10 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Rosiefaulkner\\SocketCypher\\Server\\' => array($baseDir . '/src/server.php'),
-    'Rosiefaulkner\\SocketCypher\\Client\\' => array($baseDir . '/src/client.php'),
+    'Server\\' => array($baseDir . '/src'),
     'Rosiefaulkner\\SocketCypher\\' => array($baseDir . '/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'Client\\' => array($baseDir . '/src'),
     'App\\Tests\\' => array($baseDir . '/tests'),
 );
