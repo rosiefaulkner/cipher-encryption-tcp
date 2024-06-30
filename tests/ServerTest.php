@@ -12,15 +12,9 @@ class ServerTest extends TestCase
     {
         // Sample plaintext and substitution alphabet
         $plaintext = "hello world";
-        $substitutionAlphabet = "zyxwvutsrqponmlkjihgfedcba"; // Reversed alphabet
-        
-        // Expected ciphertext
+        $substitutionAlphabet = "zyxwvutsrqponmlkjihgfedcba";
         $expectedCiphertext = "svool dliow";
-        
-        // Call encrypt method
         $ciphertext = $this->callEncrypt($plaintext, $substitutionAlphabet);
-        
-        // Assert the expected ciphertext matches the real ciphertext
         $this->assertEquals($expectedCiphertext, $ciphertext);
     }
 
@@ -32,14 +26,8 @@ class ServerTest extends TestCase
         // Sample plaintext and substitution alphabet
         $plaintext = "Hello, World!";
         $substitutionAlphabet = "zyxwvutsrqponmlkjihgfedcba";
-        
-        // Expected ciphertext to ensure punctuation is replaced with spaces
         $expectedCiphertext = "svool  dliow ";
-        
-        // Call encrypt method
         $ciphertext = $this->callEncrypt($plaintext, $substitutionAlphabet);
-        
-        // Assert expected ciphertext matches real ciphertext
         $this->assertEquals($expectedCiphertext, $ciphertext);
     }
 
@@ -48,17 +36,10 @@ class ServerTest extends TestCase
      */
     public function testEncryptWithEmptyPlaintext()
     {
-        // Sample plaintext and substitution alphabet
         $plaintext = "";
         $substitutionAlphabet = "zyxwvutsrqponmlkjihgfedcba";
-        
-        // Expected ciphertext
         $expectedCiphertext = "";
-        
-        // Call encrypt method
         $ciphertext = $this->callEncrypt($plaintext, $substitutionAlphabet);
-        
-        // Assert expected ciphertext matches real ciphertext
         $this->assertEquals($expectedCiphertext, $ciphertext);
     }
 

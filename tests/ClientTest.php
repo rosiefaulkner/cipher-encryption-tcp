@@ -10,15 +10,11 @@ class ClientTest extends TestCase
      */
     public function testReadDocument()
     {
-        // Create test file for testing
+        // Create test file to ensure correct encryption
         $filename = 'testfile.txt';
         $content = 'This is a test document.';
         file_put_contents($filename, $content);
-
-        // Call readDocument method
         $result = $this->callReadDocument($filename);
-
-        // Assert content matches the real result
         $this->assertEquals($content, $result);
 
         // Clean up test file
@@ -34,11 +30,7 @@ class ClientTest extends TestCase
         $socket = $this->createMock(\Socket::class);
         $socket->expects($this->once())->method('socket_create')->willReturn($socket);
         $socket->expects($this->once())->method('socket_connect')->willReturn(true);
-
-        // Call connectToServer method
         $result = $this->callConnectToServer();
-
-        // Assert result is true
         $this->assertNotFalse($result);
     }
 
