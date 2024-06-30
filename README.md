@@ -1,5 +1,5 @@
-# Cipher Encryption via TCP
-Client/server cypher encryption application using socket programming with TCP via command-line
+# cipher-encryption-tcp
+Client/server cipher encryption application using socket programming with TCP via command-line
 
 ## Dependencies
 
