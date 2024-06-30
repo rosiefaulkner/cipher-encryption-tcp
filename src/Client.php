@@ -36,12 +36,12 @@ class Client
         return $socket;
     }
 
-    private static function sendToServer($socket, $data)
+    private static function sendToServer($socket, $data): void
     {
         socket_write($socket, $data, strlen($data));
     }
 
-    private static function receiveFromServer($socket)
+    private static function receiveFromServer($socket): string
     {
         $response = '';
         while ($out = socket_read($socket, 2048)) {

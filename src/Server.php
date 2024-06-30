@@ -7,7 +7,7 @@ class Server
     const HOST = '127.0.0.1';
     const PORT = 2525;
 
-    private static function encrypt($plaintext, $substitutionAlphabet)
+    private static function encrypt(string $plaintext, string $substitutionAlphabet): string
     {
         $plaintext = strtolower($plaintext);
         $plaintext = preg_replace('/[^\w\s]/', ' ', $plaintext);
@@ -31,7 +31,7 @@ class Server
         return $ciphertext;
     }
 
-    public static function startServer()
+    public static function startServer(): void
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         if ($socket === false) {
