@@ -9,8 +9,8 @@ Client/server cypher encryption application using socket programming with TCP vi
 
 ## To Run
 1. Open a terminal and navigate to the root directory which contains a src/ directory that contains `Client.php` and `Server.php` class files.
-2. Run composer install to install dependencies
-3. Open a second terminal and navigate to the root directory which contains a `src/` directory that contains `Client.php` and `Server.php` class files.
+2. Open a second terminal and navigate to the root directory which contains a `src/` directory that contains `Client.php` and `Server.php` class files.
+3. Run `composer install` to create vendor directory and install dependencies
 4. In the first terminal, run the following command to start the socket server: `php src/Server.php`
 5. In the second terminal, run the application with the filename and substitution alphabet as arguments. Run the following command: `php src/Client.php us-constitution.txt nmbvcxzasdfghjklpoiuytrewq`
 6. You may also use the other test file in the root directory: `php src/Client.php test.txt nmbvcxzasdfghjklpoiuytrewq`
