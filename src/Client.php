@@ -82,5 +82,3 @@ if (php_sapi_name() === 'cli') {
     }
     Client::main($argv[1], $argv[2]);
 }
-
-// Client::main('test.txt', 'nmbvcxzasdfghjklpoiuytrewq');
